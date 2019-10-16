@@ -1,0 +1,26 @@
+{
+    "presets": [
+        ["@babel/preset-env",
+            {
+                "corejs": "3",
+                "useBuiltIns": "usage"
+            }
+        ],
+        "@babel/preset-typescript",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        "react-hot-loader/babel"
+	],
+	"env": {
+		"production": {
+			"presets": ["@emotion/babel-preset-css-prop", { "sourceMap": true }]
+		},
+		"development": {
+			"presets": [
+				["@emotion/babel-preset-css-prop", { "sourceMap": true, "labelFormat": "[local]--[filename]" }]
+			]
+		}
+	}
+}
